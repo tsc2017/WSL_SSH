@@ -8,11 +8,11 @@ Microsoft partnered with Canonical to create Bash on Ubuntu on Windows, running 
     3. Edit the `/etc/ssh/sshd_config` file by running the command `sudo vi /etc/ssh/sshd_config` and do the following
         - Change `Port` to 2222 (or any other port above 1000)
         - Change `UsePrivilegeSeparation` to no
-        - Change `PasswordAuthentication` to yes. This will be initially necessary for logging in to the ssh server and setting up keys in the next section.
+        - Change `PasswordAuthentication` to yes. This can be changed back to no if ssh keys are setup.
     4. Restart the ssh server:
         - `sudo service ssh --full-restart`  
 2. With this setup, the ssh server must be turned on every time you run Bash on Ubuntu on Windows, as by default it is off. Use this command to turn it on:
-    1. `sudo service ssh start` [starts ssh server]
+    1. `sudo service ssh start`
 3. Follow the next steps which will create scripts that start the ssh server automatically:
     1. Create a sshd.bat file and edit it with the following commands:
         - `vi sshd.bat`
