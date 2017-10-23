@@ -10,7 +10,7 @@ Microsoft partnered with Canonical to create Bash on Ubuntu on Windows, running 
     2. Change `UsePrivilegeSeparation` to no
     3. Change `PasswordAuthentication` to yes. This can be changed back to no if ssh keys are setup.
 3. Restart the ssh server:
-        - `sudo service ssh --full-restart`  
+    - `sudo service ssh --full-restart`  
 4. With this setup, the ssh server must be turned on every time you run Bash on Ubuntu on Windows, as by default it is off. Use this command to turn it on:
     1. `sudo service ssh start`
 5. Follow the next steps which will create scripts that start the ssh server automatically:
