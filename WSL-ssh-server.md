@@ -17,7 +17,7 @@ Microsoft partnered with Canonical to create Bash on Ubuntu on Windows, running 
     1. Create a sshd.bat file and edit it with the following commands:
         - `vi sshd.bat`
         - Add the following code: `C:\Windows\System32\bash.exe -c "sudo /usr/sbin/sshd -D"`
-        - Save the file and move it to a more accessible location, e.g. `mv ssh.bat /mnt/c/Users/YourUserName/Documents`. Make sure to match your username! Take note of this location for the next step as in Windows language this corresponds to `C:\Users\YourUserName\Documents`
+        - Save the file and move it to a more accessible location, e.g. `mv sshd.bat /mnt/c/Users/YourUserName/Documents`. Make sure to match your username! Take note of this location for the next step as in Windows language this corresponds to `C:\Users\YourUserName\Documents`
     2. Create a sshd.vbs file and edit it with the following commands:
         - `vi sshd.vbs` 
         - Add the following code, making sure to put in your actual user name: 
