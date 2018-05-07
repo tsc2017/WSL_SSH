@@ -16,7 +16,7 @@ Microsoft partnered with Canonical to create Bash on Ubuntu on Windows, running 
 5. Follow the next steps which will create scripts that start the ssh server automatically:
     1. Create a sshd.bat file and edit it with the following commands:
         - `vi sshd.bat`
-        - Add the following code: `C:\Windows\System32\bash.exe -c "sudo /usr/sbin/sshd -D"`
+        - Add the following code: `C:\Windows\System32\bash.exe -c "sudo /etc/init.d/ssh start"`
         - Save the file and move it to a more accessible location, e.g. `mv sshd.bat /mnt/c/Users/YourUserName/Documents`. Make sure to match your username! Take note of this location for the next step as in Windows language this corresponds to `C:\Users\YourUserName\Documents`
     2. Create a sshd.vbs file and edit it with the following commands:
         - `vi sshd.vbs` 
@@ -31,5 +31,9 @@ Microsoft partnered with Canonical to create Bash on Ubuntu on Windows, running 
         - Save the file and move it to a more accessible location, e.g. `mv sshd.vbs /mnt/c/Users/YourUserName/Documents`.
         - Open start menu, type `run`. Then type `shell:startup`. Copy the vbs file over to the Startup folder
     3. Finally, you will need to configure the ssh server to start without requiring password. Run the command `sudo visudo` and add this line to the end of the file:
-        - `%sudo ALL=NOPASSWD: /usr/sbin/sshd`
+        - `%sudo ALL=NOPASSWD: /etc/init.d/ssh`
 6. If configured properly, the ssh server should now automatically start in the background when Windows starts.
+
+---
+
+**My thanks go to [dentechy](https://gist.github.com/dentechy) for his [original GitHubGist](https://gist.github.com/dentechy/de2be62b55cfd234681921d5a8b6be11#file-wsl-ssh-server-md) on this subject. I found that the instructions he provides do not work if you've upgraded your Windows Subsystem Linux Ubuntu to 18.04LTS since the UsePrivilegeSeparation option has been depreciated on the ssh server for 18.04LTS. The above is my workaround.**
