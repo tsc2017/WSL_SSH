@@ -25,7 +25,7 @@ Microsoft partnered with Canonical to create Bash on Ubuntu on Windows, running 
         ```
 
         - Create a shortcut for this file and move it to a more accessible location, e.g. `mv sshd.vbs /mnt/c/Users/YourUserName/Documents`.
-        - Open start menu, type `run` (Or hit <kbd>⊞ Win</kbd>+<kbd>R</kbd> ). Then type `shell:startup`. Copy the vbs file over to the Startup folder
+        - Open start menu, type `run` (or hit <kbd>⊞ Win</kbd>+<kbd>R</kbd> ). Then type `shell:startup`. Copy the shortcut to the Startup folder
     3. Finally, you will need to configure the ssh server to start without requiring password. Run the command `sudo visudo` and add this line to the end of the file:
         - `%sudo ALL=NOPASSWD: /etc/init.d/ssh`
 4. If configured properly, the ssh server should now automatically start in the background when Windows starts.
