@@ -31,8 +31,8 @@ Microsoft partnered with Canonical to create Bash on Ubuntu on Windows, running 
     3. Finally, you will need to configure the ssh server to start without requiring password. Run the command `sudo visudo` and add this line to the end of the file:
         - `%sudo ALL=NOPASSWD: /etc/init.d/ssh`
 4. If configured properly, the ssh server should now automatically start in the background when Windows starts.
-5. (optional) To use password authentication, `sudo nano /etc/ssh/sshd_config` set `passwordAuthentication` to `yes` and run `sudo service ssh restart`.
-6. (optional) In order to view GPU status using `watch` and `nvidia-smi`, create a new session in XShell, whose name is "WSL" and IP is `127.0.0.1`. Set `watch "/mnt/c/Windows/System32/nvidia-smi.exe"` as a startup script for this session.
+5. (optional) To use password authentication, run `sudo nano /etc/ssh/sshd_config`, set `passwordAuthentication` to `yes` and run `sudo service ssh restart`.
+6. (optional) In order to view GPU status using `watch` and `nvidia-smi.exe` in Windows, create a new session in XShell, whose name is "WSL" and IP is `127.0.0.1`. Set `watch "/mnt/c/Windows/System32/nvidia-smi.exe"` as a startup script for this session.
 ---
 
 **My thanks go to [dentechy](https://gist.github.com/dentechy) for his [original GitHubGist](https://gist.github.com/dentechy/de2be62b55cfd234681921d5a8b6be11#file-wsl-ssh-server-md) on this subject. I found that the instructions he provides do not work if you've upgraded your Windows Subsystem Linux Ubuntu to 18.04LTS since the UsePrivilegeSeparation option has been depreciated on the ssh server for 18.04LTS. The above is my workaround.**
