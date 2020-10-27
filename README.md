@@ -31,7 +31,7 @@ Microsoft partnered with Canonical to create Bash on Ubuntu on Windows, running 
     3. Finally, you will need to configure the ssh server to start without requiring password. Run the command `sudo visudo` and add this line to the end of the file:
         - `%sudo ALL=NOPASSWD: /etc/init.d/ssh`
 4. If configured properly, the ssh server should now automatically start in the background when Windows starts.
-5. (optional) To use password authenticattion, `sudo nano /etc/ssh/sshd_config` set `passwordAuthentication` to `yes` and run `sudo service ssh restart`.
+5. (optional) To use password authentication, `sudo nano /etc/ssh/sshd_config` set `passwordAuthentication` to `yes` and run `sudo service ssh restart`.
     
 ---
 
